@@ -1,79 +1,148 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lobster&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+h1 {
+    font-family: 'Lobster', cursive, 'Courier New', Courier, monospace;
+    @apply text-3xl font-bold;
+}
+
+h2 {
+    @apply text-2xl font-bold;
+}
+
+h3 {
+    @apply text-xl font-bold;
+}
+
+h4 {
+    @apply text-lg font-bold;
+}
+
+h5 {
+    @apply text-base font-bold;
+}
+
+h6 {
+    @apply text-sm font-bold;
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+    @apply transition text-purple-400 hover:text-purple-500;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+
+blockquote p {
+    @apply border-l-4 border-purple-400 pl-2;
+    container: block;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+br {
+    content: '';
+    display: block;
+    margin-top: 1em;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+ul {
+    @apply list-disc list-inside;
 }
 
-.card {
-  padding: 2em;
+ol {
+    @apply list-decimal list-inside;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+li {
+    @apply my-2;
+}
+p {
+    line-height: normal;
+}
+pre code {
+    white-space: pre-wrap;
+    display: block;
+    padding: 1em;
+    background-color: #272822;
+    @apply border-purple-400 border rounded-lg;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+code {
+    font-family: 'JetBrains Mono', monospace;
+    @apply bg-purple-950 subpixel-antialiased;
+}
+
+/* Code if there is no pre tag before it */
+:not(pre) > code {
+    @apply p-1 border-purple-800 border rounded-lg;
+}
+
+/* Code theme */
+
+.hljs {
+    background: #272822;
+    color: #ddd;
+}
+
+.hljs-tag,
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-strong,
+.hljs-number,
+.hljs-name {
+color: #f92672;
+}
+
+.hljs-code {
+color: #66d9ef;
+}
+
+.hljs-attribute,
+.hljs-attr,
+.hljs-symbol,
+.hljs-regexp,
+.hljs-link {
+color: #bf79db;
+}
+
+.hljs-string,
+.hljs-bullet,
+.hljs-subst,
+.hljs-title,
+.hljs-section,
+.hljs-emphasis,
+.hljs-type,
+.hljs-built_in,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
+color: #a6e22e;
+}
+
+.hljs-title.class_,
+.hljs-class .hljs-title {
+color: white;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion,
+.hljs-meta {
+color: #75715e;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-doctag,
+.hljs-title,
+.hljs-section,
+.hljs-type,
+.hljs-selector-id {
+font-weight: bold;
 }
